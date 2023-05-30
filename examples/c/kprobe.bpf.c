@@ -15,7 +15,8 @@ int BPF_KPROBE(do_unlinkat, int dfd, struct filename *name)
 
 	pid = bpf_get_current_pid_tgid() >> 32;
 	filename = BPF_CORE_READ(name, name);
-	bpf_printk("KPROBE ENTRY pid = %d, filename = %s\n", pid, filename);
+	char fmt[]="KPROBE ENTRY pid = %d, filename=%s\n";
+	bpf_trace_printk(fmt,sizeof(fmt), pid, filename);
 	return 0;
 }
 
@@ -25,6 +26,7 @@ int BPF_KRETPROBE(do_unlinkat_exit, long ret)
 	pid_t pid;
 
 	pid = bpf_get_current_pid_tgid() >> 32;
-	bpf_printk("KPROBE EXIT: pid = %d, ret = %ld\n", pid, ret);
+	char fmt[]="KPROBE EXIT:pid=%d, ret=%ld\n";
+	bpf_trace_printk(fmt, sizeof(fmt), pid, ret);
 	return 0;
 }

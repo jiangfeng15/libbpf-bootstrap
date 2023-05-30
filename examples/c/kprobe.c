@@ -31,10 +31,21 @@ int main(int argc, char **argv)
 	/* Set up libbpf errors and debug info callback */
 	libbpf_set_print(libbpf_print_fn);
 
+	struct bpf_object_open_opts openopts = {};
+	openopts.sz = sizeof(struct bpf_object_open_opts);
+	openopts.btf_custom_path = strdup("/a.btf");
+	fprintf(stdout,"%s\n",openopts.btf_custom_path);
+
 	/* Open load and verify BPF application */
-	skel = kprobe_bpf__open_and_load();
-	if (!skel) {
-		fprintf(stderr, "Failed to open BPF skeleton\n");
+	skel = kprobe_bpf__open_opts(&openopts);
+	
+	if(!skel){
+		fprintf(stderr, "failed to open BPF skeleton\n");
+		return 1;
+	}
+	int ret = kprobe_bpf__load(skel);
+	if (ret) {
+		fprintf(stderr, "Failed to load BPF skeleton\n");
 		return 1;
 	}
 

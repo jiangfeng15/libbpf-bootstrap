@@ -29,14 +29,17 @@ int main(int argc, char **argv)
 	int err;
 
 	libbpf_set_print(libbpf_print_fn);
+	struct bpf_object_open_opts openopts = {};
+	openopts.sz = sizeof(struct bpf_object_open_opts);
+	openopts.btf_custom_path = "/home/admin/a.btf";
 
-	skel = usdt_bpf__open();
+	skel = usdt_bpf__open_opts(&openopts);
 	if (!skel) {
 		fprintf(stderr, "Failed to open BPF skeleton\n");
 		return 1;
 	}
 
-	skel->bss->my_pid = getpid();
+	//skel->bss->my_pid = getpid();
 
 	err = usdt_bpf__load(skel);
 	if (!skel) {
@@ -48,6 +51,7 @@ int main(int argc, char **argv)
 	 * Manually attach to libc.so we find.
 	 * We specify pid here, so we don't have to do pid filtering in BPF program.
 	 */
+	
 	skel->links.usdt_manual_attach = bpf_program__attach_usdt(skel->progs.usdt_manual_attach, getpid(),
 								  "libc.so.6", "libc", "setjmp", NULL);
 	if (!skel->links.usdt_manual_attach) {

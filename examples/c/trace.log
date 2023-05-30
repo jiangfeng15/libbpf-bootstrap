@@ -1,0 +1,20 @@
+17005 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_SOCKET_FILTER, insn_cnt=2, insns=0x7fffe8c8b470, license="GPL", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(0, 0, 0), prog_flags=0, prog_name="", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS}, 116) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_SOCKET_FILTER, insn_cnt=2, insns=0x7fffe8c8b610, license="GPL", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(0, 0, 0), prog_flags=0, prog_name="", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS}, 128) = 3
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b410, 28) = 3
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b3f0, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b3e0, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b410, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b3f0, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b3f0, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b3f0, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b410, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b420, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_BTF_LOAD, 0x7fffe8c8b420, 28) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_SOCKET_FILTER, insn_cnt=2, insns=0x7fffe8c8b380, license="GPL", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(0, 0, 0), prog_flags=0, prog_name="libbpf_nametest"}, 64) = 3
+17005 bpf(BPF_MAP_CREATE, {map_type=BPF_MAP_TYPE_ARRAY, key_size=4, value_size=4, max_entries=1, map_flags=0x400 /* BPF_F_??? */, inner_map_fd=0, map_name="libbpf_mmap", map_ifindex=0}, 72) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_MAP_CREATE, {map_type=BPF_MAP_TYPE_ARRAY, key_size=4, value_size=32, max_entries=1, map_flags=0, inner_map_fd=0, map_name="libbpf_global", map_ifindex=0}, 72) = 3
+17005 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_SOCKET_FILTER, insn_cnt=5, insns=0x7fffe8c8b350, license="GPL", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(0, 0, 0), prog_flags=0, prog_name="", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS}, 128) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_TRACEPOINT, insn_cnt=6, insns=0x7fffe8c8ac00, license="GPL", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(0, 0, 0), prog_flags=0, prog_name="", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS}, 128) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_KPROBE, insn_cnt=19, insns=0xdc3580, license="Dual BSD/GPL", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(4, 19, 0), prog_flags=0, prog_name="do_unlinkat", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS}, 128) = -1 EINVAL (无效的参数)
+17005 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_KPROBE, insn_cnt=19, insns=0xdc3580, license="Dual BSD/GPL", log_level=1, log_size=16777215, log_buf="", kern_version=KERNEL_VERSION(4, 19, 0), prog_flags=0, prog_name="do_unlinkat", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS}, 128) = -1 EINVAL (无效的参数)
+17005 +++ exited with 22 +++
